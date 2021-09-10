@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">GmaoApp</string>
+    <string name="username">Pseudo</string>
+    <string name="password">Mot de passe</string>
+    <string name="login">Connexion</string>
+    <string name="nav_drawer_open">Open navigation drawer</string>
+    <string name="nav_drawer_close">close navigation drawer</string>
+    <string name="link">
+        <a href="http://www.technosoft.com.tn/">Site web </a>
+    </string>
+    <string name="ordre_de_travail">Ordre de travail</string>
+    <string-array name="cloture">
+        <item>Oui</item>
+        <item>Non</item>
+    </string-array>
+
+</resources>

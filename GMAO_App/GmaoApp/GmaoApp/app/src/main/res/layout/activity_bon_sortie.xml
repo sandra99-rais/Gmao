@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".BonSortie"
+    android:id="@+id/drawer_layout"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/nav_view"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/menu"
+        android:layout_gravity="start"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scroll">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#2F4260"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                tools:ignore="MissingConstraints" />
+
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="84dp"
+                android:layout_marginEnd="32dp"
+                android:fontFamily="@font/archivo_narrow"
+                android:text="Bon de sortie"
+                android:textColor="#f4941c"
+                android:textSize="@dimen/titleSize"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/NBS"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="36dp"
+                android:gravity="center|left"
+                android:shadowColor="#BABABA"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:text="N°BS"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textViewSize"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+            <EditText
+                android:id="@+id/etNBS"
+                android:layout_width="187dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="36dp"
+                android:textSize="@dimen/etSize"
+                app:layout_constraintStart_toEndOf="@+id/NBS"
+                app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+            <TextView
+                android:id="@+id/NBT"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center|left"
+                android:shadowColor="#BABABA"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:text="N°OT"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textViewSize"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/NBS" />
+
+            <Spinner
+                android:id="@+id/etNBT"
+                android:layout_width="187dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:textSize="@dimen/etSize"
+                app:layout_constraintStart_toEndOf="@+id/NBT"
+                app:layout_constraintTop_toBottomOf="@+id/etNBS" />
+
+            <TextView
+                android:id="@+id/dateBon"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center|left"
+                android:shadowColor="#BABABA"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:text="Date Bon"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textViewSize"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/NBT" />
+
+            <EditText
+                android:id="@+id/etDateBon"
+                android:layout_width="187dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:textSize="@dimen/dateSize"
+                android:focusable="false"
+                app:layout_constraintStart_toEndOf="@+id/dateBon"
+                app:layout_constraintTop_toBottomOf="@+id/etNBT" />
+
+            <TextView
+                android:id="@+id/demandeur"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center|left"
+                android:shadowColor="#BABABA"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:text="Demandeur"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textViewSize"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dateBon" />
+
+            <Spinner
+                android:id="@+id/spinnerDemandeur"
+                android:layout_width="@dimen/spinnerWidth"
+                android:layout_height="40dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center|left"
+                app:layout_constraintStart_toEndOf="@+id/demandeur"
+                app:layout_constraintTop_toBottomOf="@+id/etDateBon" />
+
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fillViewport="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.333"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spinnerDemandeur"
+                tools:ignore="MissingConstraints">
+
+
+                <TableLayout
+
+                    android:id="@+id/tableLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/spinnerDemandeur"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:ignore="MissingConstraints">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#2F4260"
+
+                        >
+
+
+                        <TextView
+                            android:id="@+id/titre1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="+"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/itemsSize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Article"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/itemsSize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Designation"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/itemsSize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Q-Mvt"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/itemsSize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Prix U."
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/itemsSize"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Total"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/itemsSize"
+                            android:textStyle="bold"
+
+                            android:visibility="gone" />
+                    </TableRow>
+
+
+                </TableLayout>
+
+
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/article"
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="3dp"
+                android:gravity="center|left"
+                android:textColor="@color/text_shadow"
+                android:shadowColor="#BABABA"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:text="Article"
+                android:textSize="@dimen/textViewSize"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
+                android:visibility="gone"/>
+
+            <Spinner
+                android:id="@+id/spinnerArticle"
+                android:layout_width="187dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="27dp"
+                android:layout_marginTop="3dp"
+                android:gravity="center|left"
+                android:textSize="@dimen/textViewSize"
+                app:layout_constraintStart_toEndOf="@+id/article"
+                app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/QteStock"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center|left"
+                android:textColor="@color/text_shadow"
+                android:shadowColor="#BABABA"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:text="Qte Stock"
+                android:textSize="@dimen/textViewSize"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/article"
+                android:visibility="gone"/>
+
+            <EditText
+                android:id="@+id/etQteStock"
+                android:layout_width="187dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="27dp"
+                android:layout_marginLeft="27dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center|left"
+                android:ems="10"
+                android:textSize="@dimen/etSize"
+                app:layout_constraintStart_toEndOf="@+id/QteStock"
+                app:layout_constraintTop_toBottomOf="@+id/spinnerArticle"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/Qte"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center|left"
+                android:textColor="@color/text_shadow"
+                android:shadowColor="#BABABA"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:text="Qte  Mvt"
+                android:textSize="@dimen/textViewSize"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/QteStock"
+                android:visibility="gone"/>
+
+            <EditText
+                android:id="@+id/QteVoulue"
+                android:layout_width="187dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="27dp"
+                android:layout_marginLeft="27dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center|left"
+                android:ems="10"
+                android:inputType="number"
+                android:textSize="@dimen/etSize"
+                app:layout_constraintStart_toEndOf="@+id/Qte"
+                app:layout_constraintTop_toBottomOf="@+id/etQteStock"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/Prix"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center|left"
+                android:textColor="@color/text_shadow"
+                android:shadowColor="#BABABA"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:text="Prix U."
+                android:textSize="@dimen/textViewSize"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Qte"
+                android:visibility="gone"/>
+
+            <EditText
+                android:id="@+id/PU"
+                android:layout_width="187dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="27dp"
+                android:layout_marginLeft="27dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center|left"
+                android:text="0"
+                android:textSize="@dimen/textViewSize"
+                app:layout_constraintStart_toEndOf="@+id/Prix"
+                app:layout_constraintTop_toBottomOf="@+id/QteVoulue"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/Total"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center|left"
+                android:textColor="@color/text_shadow"
+                android:shadowColor="#BABABA"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:text="Total"
+                android:textSize="@dimen/textViewSize"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Prix"
+                android:visibility="gone"/>
+
+            <EditText
+                android:id="@+id/etTotal"
+                android:layout_width="187dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="27dp"
+                android:layout_marginLeft="27dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center|left"
+                android:textSize="@dimen/etSize"
+                app:layout_constraintStart_toEndOf="@+id/Total"
+                app:layout_constraintTop_toBottomOf="@+id/PU"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/save"
+                android:layout_width="120dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/rounder_bt"
+                android:padding="4dp"
+                android:text="enregister"
+                android:textSize="@dimen/btnSize"
+                app:backgroundTint="@color/waves"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/enregistrer"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/enregistrer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="64dp"
+                android:background="@drawable/check_circle"
+                android:textSize="@dimen/messageSize"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.108"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Total" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+</androidx.drawerlayout.widget.DrawerLayout>

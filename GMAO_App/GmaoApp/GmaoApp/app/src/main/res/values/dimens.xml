@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="etSize">18sp</dimen>
+    <dimen name="btnSize">14sp</dimen>
+    <dimen name="titleSize">28sp</dimen>
+    <dimen name="errorLoginSize">14sp</dimen>
+    <dimen name="itemsSize">14sp</dimen>
+    <dimen name="textViewSize">18dp</dimen>
+    <dimen name="dateSize">14sp</dimen>
+    <dimen name="tvSize">16sp</dimen>
+    <dimen name="title2">24sp</dimen>
+    <dimen name="messageSize">20dp</dimen>
+    <dimen name="alerteSize">15dp</dimen>
+    <dimen name="spinnerWidth">200dp</dimen>
+    <dimen name="landtitleSize">35sp</dimen>
+    <dimen name="landTextSize">20dp</dimen>
+    <dimen name="landspinnerWidth">280dp</dimen>
+</resources>

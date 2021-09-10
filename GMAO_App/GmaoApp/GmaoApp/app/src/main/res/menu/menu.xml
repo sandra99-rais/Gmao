@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/menu_home"
+            android:icon="@drawable/home"
+
+            android:title="Acceuil"
+            app:showAsAction="always"></item>
+        <item
+            android:id="@+id/menu_DMInt"
+            android:icon="@drawable/ordre"
+            android:title="Ordre de travail"
+            app:showAsAction="ifRoom"></item>
+        <item
+            android:id="@+id/menu_ListeDM"
+            android:icon="@drawable/ic_list"
+            android:title="Liste des ordres de travail"
+            app:showAsAction="ifRoom"></item>
+        <item
+            android:id="@+id/menu_ListeDemParTech"
+            android:icon="@drawable/ic_list"
+            android:title="Liste ordres/technicien"
+            android:visible="false"
+            app:showAsAction="ifRoom"></item>
+        <item
+            android:id="@+id/menu_ReleveUsages"
+            android:title="Relevé d'usages"
+            app:showAsAction="ifRoom"></item>
+        <item
+            android:id="@+id/menu_listeEchDate"
+            android:icon="@drawable/list"
+            android:title="Liste des écheances par date"
+            app:showAsAction="ifRoom"></item>
+        <item
+            android:id="@+id/menu_listeEchUsage"
+            android:icon="@drawable/list"
+            android:title="Liste des écheances par usage"
+            app:showAsAction="ifRoom"></item>
+        <item
+            android:id="@+id/menu_BonSortie"
+            android:icon="@drawable/bon"
+            android:title="Bon de Sortie"
+            app:showAsAction="ifRoom"></item>
+        <item
+            android:id="@+id/menu_ListeBS"
+            android:icon="@drawable/list"
+            android:title="Liste Bons De Sortie"
+            app:showAsAction="ifRoom"></item>
+        <item
+            android:id="@+id/menu_BonInventaire"
+            android:icon="@drawable/bon"
+            android:title="Bon d'Inventaire"
+            app:showAsAction="ifRoom"></item>
+        <item
+            android:id="@+id/menu_ListeBI"
+            android:icon="@drawable/list"
+            android:title="Liste de bons d'Inventaire"
+            app:showAsAction="ifRoom"></item>
+        <item
+            android:id="@+id/consultation"
+            android:icon="@drawable/consult"
+            android:title="Consultation des Articles"
+            app:showAsAction="ifRoom"></item>
+        <item
+            android:id="@+id/analyse"
+            android:icon="@drawable/chart"
+            android:title="Analyse Panne"
+            app:showAsAction="ifRoom"></item>
+        <item
+            android:id="@+id/analyseSec"
+            android:icon="@drawable/chartt"
+            android:title="Analyse Section"
+            app:showAsAction="ifRoom"></item>
+        <item
+            android:id="@+id/menu_Dec"
+            android:icon="@drawable/signout"
+            android:title="Se déconnecter"
+            app:showAsAction="always"></item>
+    </group>
+
+</menu>

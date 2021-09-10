@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".EchanceParDate"
+    android:id="@+id/drawer_layout"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/nav_view"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/menu"
+        android:layout_gravity="start"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#2F4260"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                tools:ignore="MissingConstraints" />
+
+
+            <TextView
+                android:id="@+id/date1"
+                android:layout_width="104dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="32dp"
+                android:gravity="center|left"
+                android:shadowColor="#BABABA"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:text="Date début"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textViewSize"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titreEch" />
+
+            <TextView
+                android:id="@+id/titreEch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="84dp"
+                android:layout_marginEnd="32dp"
+                android:fontFamily="@font/archivo_narrow"
+                android:text="Liste des écheances par date"
+                android:textColor="#f4941c"
+                android:textSize="@dimen/titleSize"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <EditText
+                android:id="@+id/etDate1"
+                android:layout_width="170dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:focusable="false"
+                android:inputType="datetime"
+                android:textSize="@dimen/dateSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/date1"
+                app:layout_constraintTop_toBottomOf="@+id/titreEch" />
+
+            <TextView
+                android:id="@+id/date2"
+                android:layout_width="104dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="12dp"
+                android:gravity="center|left"
+                android:shadowColor="#BABABA"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:text="Date Fin"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textViewSize"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/date1" />
+
+            <EditText
+                android:id="@+id/etDate2"
+                android:layout_width="170dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="12dp"
+                android:ems="10"
+                android:focusable="false"
+                android:inputType="datetime"
+                android:textSize="@dimen/dateSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/date2"
+                app:layout_constraintTop_toBottomOf="@+id/etDate1" />
+
+            <Button
+                android:id="@+id/btnFiltrer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#04448c"
+                android:text="Filtrer"
+                android:textColor="@color/white"
+                android:textSize="@dimen/btnSize"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/section"
+                tools:ignore="MissingConstraints" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:fillViewport="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/generer"
+                tools:ignore="MissingConstraints">
+
+                <TableLayout
+
+                    android:id="@+id/tableLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.47"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/generer"
+                    app:layout_constraintVertical_bias="1.0"
+                    tools:ignore="MissingConstraints">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#2F4260"
+
+                        >
+
+                        <CheckBox
+                            android:id="@+id/titre8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/itemsSize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/idEch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Num"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+
+                            android:textStyle="bold"
+                            android:visibility="gone"
+
+                            />
+
+                        <TextView
+                            android:id="@+id/titre1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Date"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/itemsSize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Equipement"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/itemsSize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Operation"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/itemsSize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Executeur"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/itemsSize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="Gamme"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/itemsSize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="D.T"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/itemsSize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="OT Gen"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/itemsSize"
+                            android:textStyle="bold" />
+
+
+                    </TableRow>
+
+                </TableLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/equipement"
+                android:layout_width="104dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="12dp"
+                android:gravity="center|left"
+                android:shadowColor="#BABABA"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:text="Equipement"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textViewSize"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/date2" />
+
+            <Spinner
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="@dimen/spinnerWidth"
+                android:layout_height="40dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="50dp"
+                android:ems="10"
+                android:gravity="center|left"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/equipement"
+                app:layout_constraintTop_toBottomOf="@+id/etDate2" />
+
+            <TextView
+                android:id="@+id/section"
+                android:layout_width="104dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="12dp"
+                android:gravity="center|left"
+                android:shadowColor="#BABABA"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:text="Section"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textViewSize"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/equipement" />
+
+            <Spinner
+                android:id="@+id/etSection"
+                android:layout_width="@dimen/spinnerWidth"
+                android:layout_height="40dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/section"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
+            <Button
+                android:id="@+id/generer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="28dp"
+                android:backgroundTint="#f4941c"
+                android:text="Géneration OT"
+
+                android:textColor="@color/white"
+                android:textSize="@dimen/btnSize"
+                app:layout_constraintBottom_toBottomOf="@+id/btnFiltrer"
+                app:layout_constraintEnd_toStartOf="@+id/AffTousEch" />
+
+            <Button
+                android:id="@+id/AffTousEch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#64747d"
+                android:text="Afficher Tous"
+                android:textColor="@color/white"
+                android:textSize="@dimen/btnSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/btnFiltrer"
+                app:layout_constraintTop_toBottomOf="@+id/etSection" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.drawerlayout.widget.DrawerLayout>

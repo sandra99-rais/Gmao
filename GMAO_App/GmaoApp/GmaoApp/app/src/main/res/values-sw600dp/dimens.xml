@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="etSize">36sp</dimen>
+    <dimen name="btnSize">28sp</dimen>
+    <dimen name="titleSize">72sp</dimen>
+    <dimen name="errorLoginSize">28sp</dimen>
+    <dimen name="itemsSize">28sp</dimen>
+    <dimen name="textViewSize">36dp</dimen>
+    <dimen name="dateSize">28sp</dimen>
+    <dimen name="tvSize">32sp</dimen>
+    <dimen name="title2">48sp</dimen>
+    <dimen name="messageSize">40dp</dimen>
+    <dimen name="alerteSize">34dp</dimen>
+</resources>

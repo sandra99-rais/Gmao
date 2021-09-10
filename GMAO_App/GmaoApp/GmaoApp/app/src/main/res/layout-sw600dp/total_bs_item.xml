@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#5f6b7c	"
+    android:weightSum="7">
+
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="6"
+        android:padding="10sp"
+        android:text="Total"
+        android:textColor="@color/black"
+        android:textSize="@dimen/itemsSize"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/prixTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_span="4"
+        android:layout_weight="1"
+        android:gravity="right"
+        android:padding="10sp"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="@dimen/itemsSize"
+        android:textStyle="bold"
+
+        />
+</TableRow>

@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".DetailDIActivity"
+    android:id="@+id/drawer_layout"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/nav_view"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/menu"
+        android:layout_gravity="start"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#2F4260"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="84dp"
+                android:layout_marginEnd="32dp"
+                android:textColor="#f4941c"
+                android:textSize="@dimen/titleSize"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/datedm"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="36dp"
+                android:gravity="center|left"
+                android:shadowColor="#BABABA"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:text="Date demande"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textViewSize"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detail" />
+
+            <TextView
+                android:id="@+id/etdatedm"
+                android:layout_width="197dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="36dp"
+                android:gravity="center|left"
+                android:textSize="@dimen/textViewSize"
+                app:layout_constraintStart_toEndOf="@+id/datedm"
+                app:layout_constraintTop_toBottomOf="@+id/detail" />
+
+            <TextView
+                android:id="@+id/nomDM"
+                android:layout_width="153dp"
+                android:layout_height="43dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center|left"
+                android:shadowColor="#BABABA"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:text="Nom demandeur"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textViewSize"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/datedm" />
+
+            <TextView
+                android:id="@+id/etNomDM"
+                android:layout_width="197dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center|left"
+                android:textSize="@dimen/textViewSize"
+                app:layout_constraintStart_toEndOf="@+id/nomDM"
+                app:layout_constraintTop_toBottomOf="@+id/etdatedm" />
+
+            <TextView
+                android:id="@+id/panne"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center|left"
+                android:shadowColor="#BABABA"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:text="Panne"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textViewSize"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nomDM" />
+
+            <TextView
+                android:id="@+id/etpanne"
+                android:layout_width="197dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center|left"
+                android:textSize="@dimen/textViewSize"
+                app:layout_constraintStart_toEndOf="@+id/panne"
+                app:layout_constraintTop_toBottomOf="@+id/etNomDM" />
+
+            <TextView
+                android:id="@+id/typeTravail"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center|left"
+                android:shadowColor="#BABABA"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:text="Type travail"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textViewSize"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/panne" />
+
+            <TextView
+                android:id="@+id/ettypetrav"
+                android:layout_width="@dimen/spinnerWidth"
+                android:layout_height="40dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="12dp"
+                android:gravity="center|left"
+                android:textSize="@dimen/textViewSize"
+                app:layout_constraintStart_toEndOf="@+id/typeTravail"
+                app:layout_constraintTop_toBottomOf="@+id/etpanne" />
+
+            <TextView
+                android:id="@+id/executeur"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center|left"
+                android:shadowColor="#BABABA"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:text="Executeur"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textViewSize"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/typeTravail" />
+
+            <TextView
+                android:id="@+id/etExecuteur"
+                android:layout_width="197dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center|left"
+                android:textSize="@dimen/textViewSize"
+                app:layout_constraintStart_toEndOf="@+id/executeur"
+                app:layout_constraintTop_toBottomOf="@+id/ettypetrav" />
+
+            <TextView
+                android:id="@+id/desc"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center|left"
+                android:shadowColor="#BABABA"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:text="Description"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textViewSize"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/executeur" />
+
+            <TextView
+                android:id="@+id/etDesc"
+                android:layout_width="197dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center|left"
+                android:textSize="@dimen/textViewSize"
+                app:layout_constraintStart_toEndOf="@+id/desc"
+                app:layout_constraintTop_toBottomOf="@+id/etExecuteur" />
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fillViewport="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.25"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/desc"
+                tools:ignore="MissingConstraints">
+            <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="4dp"
+            android:orientation="vertical"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etDesc"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#2F4260"
+
+                    >
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="Machine"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/itemsSize"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="Etat"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/itemsSize"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="Ensemble"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/itemsSize"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="Sous Ensemble"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/itemsSize"
+                        android:textStyle="bold" />
+
+
+                </TableRow>
+
+
+        </TableLayout>
+            </HorizontalScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.drawerlayout.widget.DrawerLayout>
